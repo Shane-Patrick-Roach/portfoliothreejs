@@ -1,0 +1,148 @@
+*
+{
+  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html
+{
+    background: #1e1a20;
+}
+
+
+/* 
+html,
+body
+{
+    overflow: hidden;
+} */
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+
+
+
+.section
+{
+    display: block;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-transform: uppercase;
+    font-size: 7vmin;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+section:nth-child(odd)
+{
+    justify-content: flex-end;
+}
+
+.header-one {
+  padding-top: 2em;
+}
+
+.header-button {
+  width: 20%;
+  margin-left: 0.5em;
+}
+
+.header-info {
+  background: none;
+  padding: 0.5em;
+  width: 60%;
+  font-size: .5em;
+  border: 4px solid white;
+  border-radius: .3em;
+}
+
+
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 20px;
+  margin-top: 1em;
+}
+
+.wrapper-two {
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 20px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.project {
+  align-self: end;
+  position: relative;
+  text-transform: none;
+  font-size: 2.5vmin;
+  color: #1e1a20;
+  max-width:fit-content;
+  height: 100%;
+  background: white;
+  border-radius: 1em;
+  box-shadow: #1e1a20;
+  padding: 2em;
+}
+
+h3{
+  margin: 3em 0 .5em;
+}
+
+
+a {
+
+  font-size: 2vmin;
+  display: block;
+  background: rgb(65, 65, 238);
+  color: white;
+  padding: .8em;
+  text-align: center;
+  text-decoration: none;
+  border-radius: .3em;
+}
+
+p {
+  font-size: .7em;
+  margin: 1em 0 2em;
+  padding: 1em;
+  background: rgb(245, 243, 235);
+}
+
+label {
+  display: block;
+  font-size: 1.125rem;
+  margin-bottom: .3em;
+}
+
+input{
+  width: 100%;
+  padding: .8em;
+  border: 1px solid gray;
+  margin-bottom: 1em;
+}
+
+.contact{
+
+  width: 75%;
+  margin-bottom: 1em;
+}
+
+
+
+
