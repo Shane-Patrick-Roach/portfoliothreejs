@@ -112,6 +112,7 @@ a {
   justify-content: center;
   text-decoration: none;
   border-radius: .3em;
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(184, 184, 184, 0);
 }
 
 p {
@@ -132,6 +133,12 @@ input {
   padding: .8em;
   border: 1px solid gray;
   margin-bottom: 1em;
+
+}
+
+input.message-input{
+  height: 10vw;
+
 }
 
 .contact {
@@ -164,6 +171,7 @@ input {
   position: absolute;
   top: -5%;
   display: flex;
+  
 
 }
 
@@ -179,6 +187,8 @@ input {
 .icon-link{
   margin: 10px;
 }
+
+
 
 
 
