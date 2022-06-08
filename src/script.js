@@ -41,6 +41,8 @@ const textureLoader = new THREE.TextureLoader()
 const gradientTexture = textureLoader.load('/gradients/3.jpg')
 gradientTexture.magFilter = THREE.NearestFilter
 
+const planetTexture = new THREE.TextureLoader().load('/gradients/Icy.png')
+const particleTexture = textureLoader.load('/particles/8.png')
 
 // Material
 const material = new THREE.MeshToonMaterial({
@@ -52,7 +54,7 @@ const objectsDistance = 4
 
 // Meshes
 const mesh1 = new THREE.Mesh(
-    new THREE.TorusGeometry(1, 0.5, 5, 8),
+    new THREE.SphereGeometry(1, 32, 16),
     material
 )
 
@@ -74,6 +76,7 @@ mesh3.position.y = - objectsDistance * 2;
 mesh1.position.x = 2;
 mesh2.position.x = -2;
 mesh3.position.x = 2;
+mesh1.receiveShadow = true;
 
 scene.add(mesh1, mesh2, mesh3);
 
@@ -103,7 +106,10 @@ particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 
 const particleMaterial = new THREE.PointsMaterial({
     color: 'white',
     sizeAttenuation: true,
-    size: 0.03
+    size: 0.15,
+    transparent: true,
+    alphaMap: particleTexture,
+
 })
 
 const particles = new THREE.Points(particlesGeometry, particleMaterial)
@@ -114,9 +120,16 @@ scene.add(particles)
 /**
  * Lights
  */
-const directionalLight = new THREE.DirectionalLight('#ffffff', 1)
-directionalLight.position.set(1, 1, 0)
-scene.add(directionalLight)
+const light = new THREE.DirectionalLight('#ffffff', 1)
+light.position.set(1, 1, 1)
+light.castShadow = true;
+scene.add(light)
+
+
+light.shadow.mapSize.width = 512; // default
+light.shadow.mapSize.height = 512; // default
+light.shadow.camera.near = 0.5; // default
+light.shadow.camera.far = 500; // default
 
 /**
  * Sizes
@@ -164,6 +177,8 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
 
 
