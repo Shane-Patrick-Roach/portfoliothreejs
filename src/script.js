@@ -1,28 +1,17 @@
 import './css/main.css'
 import * as THREE from 'three'
 import * as dat from 'lil-gui'
+
 import gsap from 'gsap'
 
 
-/**
- * Debug
- */
-const gui = new dat.GUI()
+
 
 const parameters = {
     materialColor: '#4c659e'
 }
 
-gui
-    .addColor(parameters, 'materialColor')
-    .onChange(() => {
-        material.color.set(parameters.materialColor)
-        particleMaterial.color.set(parameters.materialColor)
-    })
 
-/**
- * Base
- */
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
 
@@ -177,8 +166,6 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
 
 
