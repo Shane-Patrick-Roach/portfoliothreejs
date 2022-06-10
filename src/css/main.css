@@ -26,6 +26,43 @@ body
 
 
 
+
+.topnav {
+  background-color: #1e1a20;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a{
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: #1e1a20;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 0;
+}
+
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: #04AA6D;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+
+
+
+
+
 .section {
   display: block;
   align-items: center;
