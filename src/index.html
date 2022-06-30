@@ -17,20 +17,7 @@
 
 <body>
 
-    
-
     <canvas class="webgl"></canvas>
-
-
-    <div id="nav-bar">
-        <div class="topnav">
-            <a href="#">Shane.roach</a>
-            <a href="#work">Projects</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-            <a href="#about">Blog</a>
-        </div>
-    </div>
 
 
     <section id="header" class="section header-one">
@@ -51,35 +38,46 @@
 
                 <img class="project-icon" src="https://i.imgur.com/GIlZHkd.png" alt="Tool Share Icon">
 
-                <h3 class="seq">Tool Share</h3>
-                <p class="seq">Tool-sharing platform where users find and share power tools within their city.</p>
-                <a href="https://github.com/JoRoJaLa/tool-share" class="seq">View Project</a>
+                <h3>Tool Share</h3>
+                <p>Tool-sharing platform where users find and share power tools within their city.</p>
+                <a href="https://github.com/JoRoJaLa/tool-share">View Project</a>
             </div>
 
             <div class="project">
 
                 <img class="project-icon" src="https://i.imgur.com/07ZcFxW.jpg" alt="Tool Share Mobile Icon">
-                <h3 class="seq">Tool Share Mobile</h3>
-                <p class="seq">Mobile Tool-sharing platform where users find and share power tools within their city.
+                <h3>Tool Share Mobile</h3>
+                <p>Mobile Tool-sharing platform where users find and share power tools within their city.
                 </p>
-                <a href="https://github.com/JoRoJaLa/tool-share-mobile" class="seq">View Project</a>
+                <a href="https://github.com/JoRoJaLa/tool-share-mobile">View Project</a>
             </div>
 
             <div class="project">
 
                 <img class="project-icon" src="https://i.imgur.com/KS3ahA9.jpg" alt="My Kitchen Icon">
-                <h3 class="seq">My Kitchen</h3>
-                <p class="seq">Web application that takes in available ingredients from the user and calls a third-party
+                <h3>My Kitchen</h3>
+                <p>Web application that takes in available ingredients from the user and calls a third-party
                     API to suggest recipes using those ingredients</p>
-                <a href="https://github.com/My-Kitchen-App" class="seq">View Project</a>
+                <a href="https://github.com/My-Kitchen-App">View Project</a>
             </div>
         </div>
 
 
     </section>
     <section id="contact" class="section">
-        <h1>Contact Me</h1>
-        <div class="wrapper-two">
+        <h1 class="seq">Contact Me</h1>
+
+        <h2>Message Sent!</h2>
+
+
+        <div class="success">
+            <lottie-player class="lottie" src="https://assets5.lottiefiles.com/packages/lf20_bskjzmma.json"
+                background="transparent" speed="1" style="width: 600px; height: 600px;">
+            </lottie-player>
+
+        </div>
+        
+        <div class="wrapper-two form-container">
             <div class="contact">
 
 
@@ -88,7 +86,7 @@
 
                     <h3 class="seq">Feel free to to contact me any time, through any method below.</h3>
 
-                    <div class="links">
+                    <div class="links seq">
 
                         <a class="icon-link" href="https://www.linkedin.com/in/shane-roach-908987226/">
                             <img class="image-icon" src="images/linkedin.png" alt="LinkedIn icon">
@@ -113,7 +111,7 @@
                     <input type="text" id="email" class="seq message-input">
 
                     <p class="seq">Or you can email me at <em><strong>roach.patrick.shane@gmail.com</strong></em>!</p>
-                    <a href="#" class="seq">Send it!</a>
+                    <a class="cta seq">Send it!</a>
 
                 </div>
 
@@ -123,7 +121,39 @@
 
 
         </div>
+
     </section>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
+        integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+
+
+        let tl = new gsap.timeline({ defaults: { ease: Circ.easeOut } })
+        let cta = document.querySelector('.cta')
+        const player = document.querySelector('.lottie')
+
+        tl.pause(true)
+        tl.to('.seq', { y: 40, opacity: 0, stagger: .05 })
+        tl.to('.form-container', { opacity: 0 }, "+=.2")
+        tl.to('h2', { opacity: 1, duration: 2, y: -20 }, "+=1.5")
+
+        cta.addEventListener('click', () => {
+            tl.play()
+            setTimeout(() => {
+                player.play()
+            }, 800)
+        })
+
+
+
+    </script>
 
 
 
