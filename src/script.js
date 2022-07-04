@@ -191,10 +191,11 @@ window.addEventListener('scroll', () => {
                 duration: 10,
                 ease: 'power2.inOut',
                 x: '+=6',
-                y: '+=3',
+                y: '+=30',
                 z: '+=10'
             }
         )
+        
     }
 
     

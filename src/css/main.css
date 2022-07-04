@@ -202,7 +202,7 @@ input.message-input{
 }
 
 .project-icon {
-  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(184, 184, 184, 0);
+  box-shadow: 0px 10px 10px -7px #000000, 5px 5px 5px 5px rgba(226, 226, 226, 0);
   ;
   display: block;
   position: absolute;
